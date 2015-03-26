@@ -1,0 +1,23 @@
+---
+# This playbook is for ubuntu LTS machines 
+
+- name: apply common configuration to all nodes
+  hosts: all
+  remote_user: ubuntu
+
+  roles:
+    - common
+
+- name: configure and deploy the AWS CLI and Cloudwatch tooles
+  hosts: aws
+  remote_user: ubuntu
+
+  roles:
+    - cloudwatch 
+
+- name: configure and deploy the Cloudwatch Logs with most common logs 
+  hosts: aws
+  remote_user: ubuntu
+
+  roles:
+    - cwlogs 
