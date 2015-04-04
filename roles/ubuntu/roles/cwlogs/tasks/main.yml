@@ -3,5 +3,5 @@
   user: ubuntu
   sudo: yes
 
-  include: install_cw_logs_agent.yml
+  include: install_cwlogs_agent.yml
 

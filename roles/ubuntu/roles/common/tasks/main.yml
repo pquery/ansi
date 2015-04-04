@@ -14,4 +14,10 @@
   service: name=ntp state=started enabled=yes
   tags: ntp
  
+- name: install clamav antivirus
+  apt: name=clamav state=present
+  tags: compliance
 
+- name: install freshclam antivirus updater
+  apt: name=clamav-freshclam
+  tags: compliance
