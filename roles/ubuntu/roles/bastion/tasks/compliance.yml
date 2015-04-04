@@ -1,15 +1,14 @@
 ---
-  - name: Removes non essential packages from debian system
-     apt: pkg={{ item }} state=absent purge=yes
-     with_items: 
-      - telnet
-      - ftp
+# Removes non essential packages from debian system
+- apt: pkg=telnet state=absent purge=yes
+- apt: pkg=ftp state=absent purge=yes
 
-  - name: removes default users from scp 
-    acl: name=/usr/bin/scp entity=root permissions=r default=yes state=present
+# removes default users from scp 
+- file: path=/usr/bin/scp owner=www-data group=www-data mode=0644
 
-  - name: Improving IP security in '/etc/systctl.d/10-network-security.conf'
-    copy: src=10-network-security.conf dest=/etc/systctl.d/10-network-security.conf owner=root group=root mode=644 backup=yes
+# Improving IP security in '/etc/systctl.d/10-network-security.conf'
+- copy: src=10-network-security.conf dest=/etc/sysctl.d/10-network-security.conf owner=root group=root mode=644 backup=yes
 
   notify:
   - restart procps
+
