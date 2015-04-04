@@ -1,0 +1,6 @@
+---
+- name: enable procps service
+  service: name=procps enabled=yes
+
+- name: restart procps service
+  service: name=procps state=restarted

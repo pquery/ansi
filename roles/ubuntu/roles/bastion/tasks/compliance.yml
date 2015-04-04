@@ -7,3 +7,9 @@
 
   - name: removes default users from scp 
     acl: name=/usr/bin/scp entity=root permissions=r default=yes state=present
+
+  - name: Improving IP security in '/etc/systctl.d/10-network-security.conf'
+    copy: src=10-network-security.conf dest=/etc/systctl.d/10-network-security.conf owner=root group=root mode=644 backup=yes
+
+  notify:
+  - restart procps
