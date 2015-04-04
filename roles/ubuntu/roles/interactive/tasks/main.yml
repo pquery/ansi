@@ -9,7 +9,7 @@
 
 # Add the user 'dsuciu' with a bash shell and create .ssh directory 
   - user: name=dsuciu
-  - file: path=/home/dsuciu/.ssh state=directory owner=dsuciu group=dsuicu mode=0700
+  - file: path=/home/dsuciu/.ssh state=directory owner=dsuciu group=dsuciu mode=0700
 
 # Add the user 'amacnab' with a bash shell and create .ssh directory
   - user: name=amacnab
