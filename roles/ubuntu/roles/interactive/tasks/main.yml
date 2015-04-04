@@ -1,23 +1,23 @@
 ---
 # Add the user 'ole' with a bash shell and create .ssh directory 
   - user: name=ole shell=/bin/bash 
-  - file: path=/home/ole/.ssh owner=ole group=ole mode=0700
+  - file: path=/home/ole/.ssh state=directory owner=ole group=ole mode=0700
 
 # Add the user 'schalla' with a bash shell and create .ssh directory 
   - user: name=schalla
-  - file: path=/home/schalla/.ssh owner=schalla group=schalla mode=0700
+  - file: path=/home/schalla/.ssh state=directory owner=schalla group=schalla mode=0700
 
 # Add the user 'dsuciu' with a bash shell and create .ssh directory 
   - user: name=dsuciu
-  - file: path=/home/dsuciu/.ssh owner=dsuciu group=dsuicu mode=0700
+  - file: path=/home/dsuciu/.ssh state=directory owner=dsuciu group=dsuicu mode=0700
 
 # Add the user 'amacnab' with a bash shell and create .ssh directory
   - user: name=amacnab
-  - file: path=/home/amacnab/.ssh owner=amacnab group=amacnab mode=0700
+  - file: path=/home/amacnab/.ssh state=directory owner=amacnab group=amacnab mode=0700
 
 # Add the user 'fakintomide' 
   - user: name=fakintomide
-  - file: path=/home/fakintomide/.ssh owner=fakintomide group=fakintomide mode=0700
+  - file: path=/home/fakintomide/.ssh state=directory owner=fakintomide group=fakintomide mode=0700
 
 
 
