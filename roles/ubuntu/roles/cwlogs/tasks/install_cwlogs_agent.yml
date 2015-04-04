@@ -6,5 +6,8 @@
     copy: src=awslogs.conf dest=/tmp/awslogs.conf owner=root group=root mode=0700 
 
   - name: Run the aws logs agent on the source machine 
-    script: /tmp/awslogs-agent-setup.py  -n -r region us-east-1 -c /tmp/awslogs.cfg creates=/var/awslogs/etc/awslogs.conf
+    shell: awslogs-agent-setup.py  -n -r region us-east-1 -c /tmp/awslogs.conf 
+    args: 
+     chdir: /tmp/
+     creates: /var/awslogs/etc/awslogs.conf
    
