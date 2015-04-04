@@ -1,0 +1,7 @@
+---
+  - name: Move the aws logs agent onto the machine
+    copy: src=awslogs-agent-setup.py dest=/tmp/awslogs-agent-setup.py owner=ubuntu group=ubuntu mode=0755
+
+  - name: Run the aws logs agent on the source machine 
+    script: /tmp/awslogs-agent-setup.py --region us-east-1  
+   

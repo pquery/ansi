@@ -1,0 +1,9 @@
+---
+  - name: Removes non essential packages from debian system
+     apt: pkg={{ item }} state=absent purge=yes
+     with_items: 
+      - telnet
+      - ftp
+
+  - name: removes default users from scp 
+    acl: name=/usr/bin/scp entity=root permissions=r default=yes state=present
