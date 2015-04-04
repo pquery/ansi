@@ -20,4 +20,17 @@
   remote_user: ubuntu
 
   roles:
-    - cwlogs 
+    - cwlogs
+- name: configure and harden bastion host
+  hosts: bastion
+  remote_user: ubuntu
+
+  roles: 
+  - bastion
+
+- name: configure interactive data users
+  hosts: interactive
+  remote_user: ubuntu
+  
+  roles:
+  - interactive 
