@@ -3,4 +3,5 @@
   user: ubuntu
   sudo: yes
 
-  include: install_aws_cli.yml
+  include: install_cw_logs_agent.yml
+

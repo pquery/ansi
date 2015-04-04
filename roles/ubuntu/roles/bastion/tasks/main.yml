@@ -1,0 +1,10 @@
+---
+- name: Building Bastion Box for Ubuntu
+  user: ubuntu
+  sudo: yes
+
+  include: compliance.yml
+  include: bastion.yml
+
+
+
